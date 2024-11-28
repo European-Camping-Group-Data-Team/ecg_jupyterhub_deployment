@@ -15,7 +15,7 @@
 ##common variables
 project_id        = "ecg-big-data-sandbox"
 cluster_name      = "jupyterlab"
-cluster_location  = "europe-west1-b"
+cluster_location  = "europe-west1"
 private_cluster   = false ## true = private cluster, false = public cluster
 autopilot_cluster = false ## true = autopilot cluster, false = standard cluster
 
@@ -26,13 +26,14 @@ autopilot_cluster = false ## true = autopilot cluster, false = standard cluster
 create_network    = true
 network_name      = "ml-network"
 subnetwork_name   = "ml-network"
-subnetwork_region = "europe-west1-b"
+subnetwork_region = "europe-west1"
 subnetwork_cidr   = "10.100.0.0/16"
 
 cpu_pools = [{
   name         = "cpu-pool"
   machine_type = "n1-standard-16"
   autoscaling  = true
+  git 
   min_count    = 1
   max_count    = 3
   enable_gcfs  = true
@@ -40,13 +41,13 @@ cpu_pools = [{
   disk_type    = "pd-standard"
 }]
 
-## make sure required gpu quotas are available in that region
+## make sure required gpu quotas are available in that region²
 enable_gpu = true
 gpu_pools = [
   {
     name               = "gpu-pool-l4"
     machine_type       = "g2-standard-24"
-    node_locations     = "europe-west1-b" ## comment to autofill node_location based on cluster_location
+    node_locations     = "europe-west1" ## comment to autofill node_location based on cluster_location
     autoscaling        = true
     min_count          = 1
     max_count          = 3
