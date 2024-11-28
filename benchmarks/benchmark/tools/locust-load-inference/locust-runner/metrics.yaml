@@ -1,0 +1,39 @@
+{
+    'metrics': {
+        'DCGM_UTIL': {
+            'filter': 'metric.type = "prometheus.googleapis.com/DCGM_FI_DEV_GPU_UTIL/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'DCGM_USED': {
+            'filter': 'metric.type = "prometheus.googleapis.com/DCGM_FI_DEV_FB_USED/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'AVG_TEST_TIME': {
+            'filter': 'metric.type = "prometheus/locust_custom_metrics_avg_test_time/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'AVG_OUTPUT_TOKEN_LATENCY': {
+            'filter': 'metric.type = "prometheus/locust_custom_metrics_avg_output_token_latency/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'AVG_TOKENS_RECEIVED': {
+            'filter': 'metric.type = "prometheus/locust_custom_metrics_avg_tokens_received/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'AVG_TOKENS_SENT': {
+            'filter': 'metric.type = "prometheus/locust_custom_metrics_avg_tokens_sent/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        },
+        'AVG_TIME_TO_FIRST_TOKEN': {
+            'filter': 'metric.type = "prometheus/locust_custom_metrics_time_to_first_token/gauge"',
+            'type': 'GAUGE',
+            'aggregation': ''
+        }
+    }
+}
