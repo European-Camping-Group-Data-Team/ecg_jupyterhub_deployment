@@ -33,7 +33,6 @@ cpu_pools = [{
   name         = "cpu-pool"
   machine_type = "n1-standard-16"
   autoscaling  = true
-  git 
   min_count    = 1
   max_count    = 3
   enable_gcfs  = true
