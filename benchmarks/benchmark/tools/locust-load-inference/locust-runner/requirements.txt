@@ -1,7 +1,0 @@
-fastapi
-requests
-uvicorn
-google-cloud-monitoring
-google-cloud-storage
-pathlib
-PyYAML
