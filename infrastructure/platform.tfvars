@@ -46,7 +46,7 @@ gpu_pools = [
   {
     name               = "gpu-pool-l4"
     machine_type       = "g2-standard-24"
-    node_locations     = "europe-west1" ## comment to autofill node_location based on cluster_location
+    ## node_locations     = "europe-west1-b" ## comment to autofill node_location based on cluster_location
     autoscaling        = true
     min_count          = 1
     max_count          = 3
