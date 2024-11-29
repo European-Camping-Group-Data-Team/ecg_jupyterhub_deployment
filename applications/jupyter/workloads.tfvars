@@ -54,6 +54,6 @@ add_auth                 = false
 
 # domain            = "jupyterhub.ecg.camp"
 # client_id         = "842140612422-oir05i4fcpujjsu57sofsrkf7t0jql7l.apps.googleusercontent.com"  ## Ensure brand is Internal, to autogenerate client credentials
-# client_secret     = "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"
+# client_secret     = ""
 # members_allowlist = "user:hugorannou@ecg.camp"
 
