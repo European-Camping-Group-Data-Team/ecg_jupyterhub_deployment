@@ -50,7 +50,7 @@ k8s_backend_config_name  = "jupyter-iap-config"
 k8s_backend_service_name = "proxy-public"
 k8s_backend_service_port = 80
 
-domain            = "jupyter.example.com" ## Provide domain for ingress resource and ssl certificate. 
+domain            = "jupyterhub.ecg.camp" ## Provide domain for ingress resource and ssl certificate. 
 client_id         = ""  ## 842140612422-oir05i4fcpujjsu57sofsrkf7t0jql7l.apps.googleusercontent.com  ## Ensure brand is Internal, to autogenerate client credentials
 client_secret     = ""
 members_allowlist = "user:hugorannou@ecg.camp"
