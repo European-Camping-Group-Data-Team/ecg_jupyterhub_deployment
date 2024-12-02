@@ -20,13 +20,13 @@ variable "namespace" {
 variable "notebook_image" {
   type        = string
   description = "Jupyter notebook image name"
-  default     = "jupyter/tensorflow-notebook"
+  default     = "quay.io/jupyter/minimal-notebook"
 }
 
 variable "notebook_image_tag" {
   type        = string
   description = "Jupyter notebook image tag"
-  default     = "python-3.10"
+  default     = "hub-5.2.1"
 }
 
 variable "members_allowlist" {
