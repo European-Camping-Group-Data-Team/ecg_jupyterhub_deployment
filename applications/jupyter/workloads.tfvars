@@ -39,7 +39,7 @@ workload_identity_service_account = "jupyter-sa"
 
 # IAP Configs
 create_brand  = false
-support_email = "<email>" ## specify if create_brand=true
+# support_email = "" ## specify if create_brand=true
 
 # JupyterHub with IAP
 add_auth                 = true
