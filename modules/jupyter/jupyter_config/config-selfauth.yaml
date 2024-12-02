@@ -92,7 +92,7 @@ singleuser:
   image:
     name: ${notebook_image}
     tag: ${notebook_image_tag}
-  startTimeout: 1000
+  startTimeout: 1500
   extraAnnotations:
     gke-gcsfuse/volumes: "true"
     gke-gcsfuse/cpu-limit: "1"
@@ -100,26 +100,26 @@ singleuser:
     gke-gcsfuse/ephemeral-storage-limit: 10Gi
   serviceAccountName: ${k8s_service_account}
     # Configure csi for gcsfuse
-  storage:
-    dynamic:
-      pvcNameTemplate: claim-{username}
-    extraVolumes:
-      - name: data-vol
-        csi:
-          driver: gcsfuse.csi.storage.gke.io
-          volumeAttributes:
-            bucketName: ${gcs_bucket}
-            mountOptions: "implicit-dirs,uid=1000,gid=100"
-      - name: secret-volume
-        secret:
-          secretName: ${secret_name}
-          optional: true
-    extraVolumeMounts:
-        - name: data-vol
-          mountPath: /data
-        - name: secret-volume
-          mountPath: /etc/secret-volume
-          readOnly: true
+  # storage:
+  #   dynamic:
+  #     pvcNameTemplate: claim-{username}
+  #   extraVolumes:
+  #     - name: data-vol
+  #       csi:
+  #         driver: gcsfuse.csi.storage.gke.io
+  #         volumeAttributes:
+  #           bucketName: ${gcs_bucket}
+  #           mountOptions: "implicit-dirs,uid=1000,gid=100"
+  #     - name: secret-volume
+  #       secret:
+  #         secretName: ${secret_name}
+  #         optional: true
+  #   extraVolumeMounts:
+  #       - name: data-vol
+  #         mountPath: /data
+  #       - name: secret-volume
+  #         mountPath: /etc/secret-volume
+  #         readOnly: true
 # More info on kubespawner overrides: https://jupyterhub-kubespawner.readthedocs.io/en/latest/spawner.html#kubespawner.KubeSpawner
 #   profile example:
 #   - display_name: "Learning Data Science"
