@@ -12,48 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-##common variables
+##common variables  
 ## Need to pull this variables from tf output from previous infrastructure stage
 project_id = "ecg-big-data-sandbox"
 
-## This is required for terraform to connect to GKE cluster and deploy workloads.
-cluster_name     = "jupyterlab"
+## this is required for terraform to connect to GKE master and deploy workloads
+create_cluster        = true # this flag will create a new standard public gke cluster in default network
+cluster_name     = "jupyterlab-no-iap"
 cluster_location = "europe-west1"
-
-## If terraform should create a new GKE cluster, fill in this section as well.
-##    By default, a public autopilot GKE cluster will be created in the default network.
-##    Set the autopilot_cluster variable to false to create a standard cluster instead.
-create_cluster        = false
-autopilot_cluster     = false
-cluster_membership_id = "" # required for private cluster, defaults to `cluster_name`
+cluster_membership_id = "" # required only for private clusters, default: cluster_name
 
 #######################################################
 ####    APPLICATIONS
 #######################################################
 
 ## JupyterHub variables
-kubernetes_namespace              = "jupyterlab-gke"
+kubernetes_namespace              = "jupyterlab-gke-no-iap"
 create_gcs_bucket                 = true
-gcs_bucket                        = "ecg_jupyterlab_storage" # Choose a globally unique bucket name.
+gcs_bucket                        = "ecg_jupyterlab_storage_no_iap" # Choose a globally unique bucket name.
 workload_identity_service_account = "jupyter-sa"
 
-# IAP Configs
-create_brand  = false
-# support_email = "" ## specify if create_brand=true
-
-# JupyterHub with IAP
-add_auth                 = true
-brand                    = "projects/842140612422/brands/842140612422"
-support_email            = "ecg-data-team@ecg.camp"
-k8s_ingress_name         = "jupyter-ingress"
-k8s_managed_cert_name    = "jupyter-managed-cert"
-k8s_iap_secret_name      = "jupyter-iap-secret"
-k8s_backend_config_name  = "jupyter-iap-config"
-k8s_backend_service_name = "proxy-public"
-k8s_backend_service_port = 80
-
-domain            = "jupyterhub.ecg.camp"
-client_id         = "842140612422-oir05i4fcpujjsu57sofsrkf7t0jql7l.apps.googleusercontent.com"  ## Ensure brand is Internal, to autogenerate client credentials
-client_secret     = "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"
-members_allowlist = "user:hugorannou@ecg.camp"
-
+# JupyterHub without IAP
+add_auth = false
