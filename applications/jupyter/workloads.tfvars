@@ -33,7 +33,7 @@ cluster_membership_id = "" # required for private cluster, defaults to `cluster_
 
 ## JupyterHub variables
 kubernetes_namespace              = "jupyterlab-gke"
-create_gcs_bucket                 = true
+create_gcs_bucket                 = false
 gcs_bucket                        = "ecg_jupyterlab_storage" # Choose a globally unique bucket name.
 workload_identity_service_account = "jupyter-sa"
 
@@ -42,18 +42,18 @@ create_brand  = false
 support_email = "<email>" ## specify if create_brand=true
 
 # JupyterHub with IAP
-add_auth                 = false
-# brand                    = "projects/842140612422/brands/842140612422"
-# support_email            = "ecg-data-team@ecg.camp"
-# k8s_ingress_name         = "jupyter-ingress"
-# k8s_managed_cert_name    = "jupyter-managed-cert"
-# k8s_iap_secret_name      = "jupyter-iap-secret"
-# k8s_backend_config_name  = "jupyter-iap-config"
-# k8s_backend_service_name = "proxy-public"
-# k8s_backend_service_port = 80
+add_auth                 = true
+brand                    = "projects/842140612422/brands/842140612422"
+support_email            = "ecg-data-team@ecg.camp"
+k8s_ingress_name         = "jupyter-ingress"
+k8s_managed_cert_name    = "jupyter-managed-cert"
+k8s_iap_secret_name      = "jupyter-iap-secret"
+k8s_backend_config_name  = "jupyter-iap-config"
+k8s_backend_service_name = "proxy-public"
+k8s_backend_service_port = 80
 
-# domain            = "jupyterhub.ecg.camp"
-# client_id         = "842140612422-oir05i4fcpujjsu57sofsrkf7t0jql7l.apps.googleusercontent.com"  ## Ensure brand is Internal, to autogenerate client credentials
-# client_secret     = ""
-# members_allowlist = "user:hugorannou@ecg.camp"
+domain            = "jupyterhub.ecg.camp"
+client_id         = "842140612422-oir05i4fcpujjsu57sofsrkf7t0jql7l.apps.googleusercontent.com"  ## Ensure brand is Internal, to autogenerate client credentials
+client_secret     = "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"
+members_allowlist = "user:hugorannou@ecg.camp"
 

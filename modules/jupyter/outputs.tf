@@ -17,7 +17,7 @@ output "jupyterhub_uri" {
 }
 
 output "jupyterhub_user" {
-  value = var.add_auth ? "" : "admin"
+  value = var.add_auth ? "" : "hugor"
 }
 
 output "jupyterhub_password" {
