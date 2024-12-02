@@ -33,13 +33,13 @@ cluster_membership_id = "" # required for private cluster, defaults to `cluster_
 
 ## JupyterHub variables
 kubernetes_namespace              = "jupyterlab-gke"
-create_gcs_bucket                 = false
+create_gcs_bucket                 = true
 gcs_bucket                        = "ecg_jupyterlab_storage" # Choose a globally unique bucket name.
 workload_identity_service_account = "jupyter-sa"
 
 # IAP Configs
 create_brand  = false
-support_email = "<email>" ## specify if create_brand=true
+# support_email = "" ## specify if create_brand=true
 
 # JupyterHub with IAP
 add_auth                 = true

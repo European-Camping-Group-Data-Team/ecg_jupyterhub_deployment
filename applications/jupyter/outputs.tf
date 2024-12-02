@@ -52,3 +52,8 @@ output "project_id" {
   value       = var.project_id
   description = "GKE cluster location"
 }
+
+output "domain" {
+  value       = var.domain
+  description = "Jupyter domain name"
+}
