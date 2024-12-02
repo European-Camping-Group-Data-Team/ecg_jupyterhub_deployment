@@ -18,7 +18,7 @@ project_id = "ecg-big-data-sandbox"
 
 ## this is required for terraform to connect to GKE master and deploy workloads
 create_cluster        = true # this flag will create a new standard public gke cluster in default network
-cluster_name     = "jupyterlab-no-iap"
+cluster_name     = "jupyterlab"
 cluster_location = "europe-west1"
 cluster_membership_id = "" # required only for private clusters, default: cluster_name
 
@@ -27,9 +27,9 @@ cluster_membership_id = "" # required only for private clusters, default: cluste
 #######################################################
 
 ## JupyterHub variables
-kubernetes_namespace              = "jupyterlab-gke-no-iap"
+kubernetes_namespace              = "jupyterlab-gke"
 create_gcs_bucket                 = true
-gcs_bucket                        = "ecg_jupyterlab_storage_no_iap" # Choose a globally unique bucket name.
+gcs_bucket                        = "ecg_jupyterlab_storage" # Choose a globally unique bucket name.
 workload_identity_service_account = "jupyter-sa"
 
 # JupyterHub without IAP
